@@ -1,5 +1,4 @@
 # ANDRES DE LA FLOR
-
 # Encode the password by shifting each character by 3 numbers
 def encode(password):
     encoded = ""  # This will be the encoded password
