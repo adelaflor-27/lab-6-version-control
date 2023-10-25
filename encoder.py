@@ -12,6 +12,16 @@ def encode(password):
 
     return encoded
 
+def decode(password): #Completed by Corey Cavalli using format of the encoder created by Andres De La Flor
+    decoded = ""   # This will be the decoded password
+
+    # Loop through the password to shift each character
+    for digit in password:
+        shifted = (int(digit) - 3) % 10  # Get the remainder of division by 10 to get the digit it should be
+        decoded += str(shifted)
+
+    return decoded
+
 # The main function of the program
 def main():
     # The password gets stored in this variable
@@ -33,9 +43,9 @@ def main():
             password = encode(input("Please enter your password to encode: "))
             print("Your password has been encoded and stored!")
 
-        # TODO: Call the decoder, if they asked to decode
+        #  Call the decoder, if they asked to decode
         elif choice == 2:
-            pass
+            print(f"The encoded password is {password}, and the original password is {decode(password)}")
 
         # Quit the loop if they ask to quit
         elif choice == 3:
